@@ -25,18 +25,17 @@ font-style: normal;
     z-index: 0;
     color: white;
 }
-.container:before{
-    content: '';
+.bg-overlay {
+    position: absolute;
     inset: 0;
     height: 100vh;
-    position: absolute;
-    background: url('resource/restaurant-bg.jpg') center/cover no-repeat;
+    background-size: cover;
+    background-position: center;
     opacity: 0.5;
     z-index: -1;
-    -webkit-filter: blur(1px);
     filter: blur(1px);
 }
-
+  
 /* Navigation section */
 .navbar{
     display: flex;

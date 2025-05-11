@@ -1,12 +1,17 @@
 'use strict';
 
-// loading css and additional javascript files
+// loading the required files and additional javascript files
 require('./style.css');
 const createHomeSection = require('./home');
 const {menu, renderMenu} = require('./menu.js');
 const {createAboutSection} = require('./about.js');
 const contact = require('./contacts');
 const { last } = require('lodash');
+
+// Loading the Background image directly
+const bgImage = require('./resource/restaurant-bg.jpg');
+document.querySelector('.bg-overlay').style.backgroundImage = `url(${bgImage})`;
+
 
 // Main Selectors
 const homenav = document.querySelector('.homez');
