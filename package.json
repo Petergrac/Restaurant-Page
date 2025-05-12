@@ -182,7 +182,6 @@
     "utila": "^0.4.0",
     "watchpack": "^2.4.2",
     "webpack": "^5.99.8",
-    "webpack-merge": "^6.0.1",
     "webpack-sources": "^3.2.3",
     "which": "^2.0.2",
     "wildcard": "^2.0.1",
@@ -192,7 +191,8 @@
   },
   "devDependencies": {
     "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.1"
+    "webpack-dev-server": "^5.2.1",
+    "webpack-merge": "^6.0.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
