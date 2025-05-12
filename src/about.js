@@ -10,7 +10,7 @@ function createAboutSection() {
   heading.textContent = '🏨 About Us';
 
   const paragraph1 = document.createElement('p');
-  paragraph1.textContent = `Welcome to Paladar – where fine dining meets comfort. 
+  paragraph1.textContent = `Welcome to Serenity Dine – where fine dining meets comfort. 
   Established in 2010, our hotel restaurant is known for combining modern elegance with traditional hospitality.`;
 
   const paragraph2 = document.createElement('p');

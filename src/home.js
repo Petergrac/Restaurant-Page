@@ -33,7 +33,7 @@ function createHomeSection() {
     section.appendChild(p2);
     section.appendChild(p3);
     section.appendChild(buttonDiv);
-  
+    section.classList.add('home-section');
     return { section, btn1, btn2 }; // expose buttons
 }
   

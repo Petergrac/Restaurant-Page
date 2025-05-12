@@ -10,10 +10,10 @@ function createContactSection() {
     phone.textContent = 'Phone: +1-234-567-890';
   
     const email = document.createElement('p');
-    email.textContent = 'Email: contact@paladar.com';
+    email.textContent = 'Email: contact@serenity.com';
   
     const address = document.createElement('p');
-    address.textContent = '123 Foodie Lane, London, UK';
+    address.textContent = '123 Kenyatta Lane, Nairobi, Kenya';
   
     section.appendChild(heading);
     section.appendChild(phone);

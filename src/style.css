@@ -25,7 +25,7 @@ font-style: normal;
     z-index: 0;
     color: white;
 }
-.bg-overlay {
+.container::before {
     position: absolute;
     inset: 0;
     height: 100vh;
@@ -34,6 +34,7 @@ font-style: normal;
     opacity: 0.5;
     z-index: -1;
     filter: blur(1px);
+    -webkit-filter: 1px;
 }
   
 /* Navigation section */
@@ -69,6 +70,12 @@ nav>a:hover{
 }
 
 /* Home buttons section */
+.home-section{
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 10px;
+    font-size: 1.3rem;
+}
 button{
     font-size: 1em;
     font-weight: bolder;
@@ -81,15 +88,10 @@ button{
 }
 button:hover{
     color: rgb(243, 157, 18);
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.339);
     border: 1px solid rgb(243, 157, 18);
     transition: .3s all ease-in-out;
 }
-.fade-out {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-  
 
 /* Footer section */
 footer{
@@ -104,27 +106,28 @@ footer > a{
     font-size: 1.3rem;
     color: white;
 }
-
+footer > a:hover{
+    text-decoration: underline;
+}
 /* Menu section */
 .articles > p{
+    font-family: "Roboto Condensed", sans-serif;
     font-size: 1rem;
-    text-spacing-trim: trim-start;
-    font-weight: normal;
 }
 .menu{
     grid-template-columns: repeat(auto-fit, minmax(200px,250px));
     gap: 20px;
 }
 .articles{
-    border: 1px solid;
+    border: 1px solid black;
     display: grid;
     border-radius: 10px;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(9, 9, 9, 0.764);
     justify-items: start;
     padding-left: 10px;
 }
 .articles:hover{
-    border: 2px solid rgb(243, 157, 18);
+    border: 3px solid rgb(243, 157, 18);
 }
 
 /* About section */
