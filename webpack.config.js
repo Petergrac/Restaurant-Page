@@ -1,52 +1,57 @@
-
-// Export and import path
-const path = require("path");
-// HTML path
+const path = require("path"); // ✅ Fixes the error
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-module.exports = {
-  mode: "development",
-  entry: "./src/index.js",
-  output: {
-    filename: "main.js",
-    path: path.resolve(__dirname, "dist"),
-    clean: true,
-    publicPath: "/Restaurant-Page/",
-  },
-  // Html plugin
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: "./src/template.html",
-    }),
-  ],
-  // LOADERS
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader'
-        }
-      },
-      { // CSS loader
-        test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
-      },      
-      { // HTML loader
-        test: /\.html$/i,
-        loader: "html-loader"
-      },
-      { // Local image loader
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: "asset/resource",
-      },
-    ],
-  },
-  // Webdev source
-  devtool: "eval-source-map",
-  devServer: {
-    watchFiles: ["./src/template.html"],
-  }
-};
+module.exports = (env, argv) => {
+  const isProd = argv.mode === 'production';
 
+  return {
+    mode: isProd ? "production" : "development",
+    entry: "./src/index.js",
+    output: {
+      filename: "main.js",
+      path: path.resolve(__dirname, "dist"),
+      clean: true,
+      publicPath: isProd ? "/Restaurant-Page/" : "/", // ✅ dynamic path
+    },
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: "./src/template.html",
+      }),
+    ],
+    module: {
+      rules: [
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader'
+          }
+        },
+        {
+          test: /\.css$/i,
+          use: ["style-loader", "css-loader"],
+        },
+        {
+          test: /\.html$/i,
+          loader: "html-loader"
+        },
+        {
+          test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          type: 'asset/resource',
+          generator: {
+            filename: 'images/[hash][ext][query]',
+          },
+        },
+      ],
+    },
+    devtool: "eval-source-map",
+    devServer: {
+      static: {
+        directory: path.join(__dirname, "dist"),
+      },
+      port: 8080,
+      open: true,
+      watchFiles: ["./src/template.html"],
+    },
+  };
+};
