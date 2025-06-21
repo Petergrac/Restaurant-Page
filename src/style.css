@@ -133,7 +133,7 @@ footer > a:hover{
 /* About section */
 .about {
     padding: 2rem;
-    background-color: #ffffff;
+    background-color: #282626;
     border-radius: 12px;
     font-family: 'Roboto Condensed', sans-serif;
 }
@@ -152,7 +152,7 @@ footer > a:hover{
 /* style.css */
 .contact-section {
     padding: 2rem;
-    background-color: #f5f5f5;
+    background-color: #282727;
     border-radius: 12px;
     max-width: 600px;
     margin: 2rem auto;
